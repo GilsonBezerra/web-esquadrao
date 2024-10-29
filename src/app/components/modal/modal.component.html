@@ -1,0 +1,67 @@
+<div class="modal overlay">
+    <!-- MODAL TYPE PROMO -->
+    <div class="content modal-box" *ngIf="type === 'promo'">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <h3>{{title}} </h3>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <div class="description">
+                        <p>{{message}}</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-button (click)="closed()" expand="block" fill="outline">
+                        {{confirmButtonLabel}}
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="closed()" expand="block">
+                        {{cancelButtonLabel}}
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+    <!-- MODAL TYPE INSERT -->
+    <div class="content modal-box" *ngIf="type === 'insert'">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <h3>{{title}} </h3>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <div class="description">
+                        <input type="text">
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-button (click)="closed()" expand="block" fill="outline">
+                        {{confirmButtonLabel}}
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="closed()" expand="block">
+                        {{cancelButtonLabel}}
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </div>
+
+</div>

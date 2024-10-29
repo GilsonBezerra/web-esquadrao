@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-row size="12">
+            <ion-col size="1" (click)="voltarPraHome()">
+                <ion-icon class="icon__arrow__back" name="arrow-back"></ion-icon>
+            </ion-col>
+            <ion-col size="11">
+                <ion-title>Detalhes do agendamento</ion-title>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div>
+        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-item lines="none"><label><strong>Profissional:&nbsp;</strong></label>{{ profissional }}</ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="top__row">
+                    <ion-col size="6">
+                        <ion-item lines="none"><label><strong>Serviço:&nbsp;</strong></label>{{ servico }}</ion-item>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-item lines="none"><label><strong>Preço:&nbsp;</strong></label>{{ preco | currency: 'BRL'}}</ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="top__row">
+                    <ion-col size="6">
+                        <ion-item lines="none"><label><strong>Data:&nbsp;</strong></label>{{ data | date: 'dd/MM/yyyy'}}</ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-row class="top__row">
+                <ion-col size="7" class="col__pagamento">
+                    <ion-item lines="none"><label><strong>Pagamento:&nbsp;</strong></label>{{ pagamento.forma }}</ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-icon class="icon__trash" (click)="alertDeleteAgendamento(agendamento.id)" name="trash"></ion-icon>
+
+        </ion-card>
+    </div>
+
+</ion-content>

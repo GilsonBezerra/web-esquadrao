@@ -1,0 +1,29 @@
+ion-card {
+    padding: 20px;
+}
+
+ion-segment {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+ion-img {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ion-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 3rem;
+}
+
+.version__code {
+    text-align: center;
+    margin-bottom: 1px;
+    position: relative;
+}

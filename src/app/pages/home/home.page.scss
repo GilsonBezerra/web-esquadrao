@@ -1,0 +1,49 @@
+ion-footer {
+    margin-bottom: 10px;
+}
+
+ion-header {
+    display: flex;
+    text-align: center;
+    ion-title {
+        margin-top: 0.4rem;
+        margin-left: 0.5rem;
+    }
+}
+
+ion-card {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 1.5rem;
+    width: 92.5%;
+    height: 150px;
+    text-align: center;
+    ion-card-title {
+        display: flex;
+        top: 50%;
+        left: 62%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+ion-fab {
+    margin-bottom: 32px;
+    margin-right: 32px;
+}
+
+.col__pagamento {
+    margin-left: 0.3rem;
+    margin-top: -0.5rem;
+}
+
+.top__row {
+    margin-top: -15px;
+}
+
+ion-toolbar {
+    .icon__add {
+        float: right;
+        margin-right: 0.5rem;
+        zoom: 2;
+    }
+}

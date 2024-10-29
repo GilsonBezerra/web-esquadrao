@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Sobre o app</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-text color="primary">
+            <h1>{{ appName }}</h1>
+        </ion-text>
+        <ion-text color="primary">
+            <span> <strong>Versão:</strong> v{{appVersionCode}}</span><br /><br />
+        </ion-text>
+        <ion-text color="primary">
+            <span><strong>Desenvolvido por: </strong> Lithium Code Software Ltda-ME</span>
+        </ion-text>
+    </ion-card>
+
+</ion-content>

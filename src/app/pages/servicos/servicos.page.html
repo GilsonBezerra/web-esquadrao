@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Serviços cadastrados</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <form [formGroup]="servicoForm">
+            <ion-item>
+                <ion-label position="floating">Data</ion-label>
+                <ion-input type="date" formControlName="nome"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Profissional</ion-label>
+                <ion-input type="text" formControlName="profissional"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Preço</ion-label>
+                <ion-input type="number" formControlName="preco" disabled="true"></ion-input>
+            </ion-item>
+        </form>
+    </ion-card>
+
+    <ion-button (click)="criarNovoServico()" [disabled]="servicoForm.invalid">Salvar</ion-button>
+
+</ion-content>

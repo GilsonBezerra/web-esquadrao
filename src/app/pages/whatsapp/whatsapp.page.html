@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Whatsapp</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-title class="ion-title-body">Atendimento via whatsapp</ion-title>
+    <section class="texto">
+        <ion-text>
+            Ao clicar no botão abaixo, você será direcionado para o nosso atendimento via whatsapp. Por favor, envie apenas texto. Não aceitamos audio ou imagens.
+        </ion-text>
+    </section>
+    <ion-button [href]="url" expand="block">
+        <ion-icon slot="start" name="logo-whatsapp"></ion-icon>
+        Abrir Whatsapp
+    </ion-button>
+</ion-content>

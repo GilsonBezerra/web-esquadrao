@@ -1,0 +1,45 @@
+.content{
+    background: #ffff;
+    padding-top: 50px;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: flex-end;
+    height: fit-content;
+    position: relative;
+}
+.button-out{
+    // color: #000000;
+    // border-color: #000000;   
+    // border: 1px solid #000000;
+    // box-sizing: border-box;
+    border-radius: 12px;
+    height: 34px;
+    width: 100%;
+}
+ion-button {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.button-solid {
+    background: #000000;
+    border-radius: 12px;
+    color: #fff;
+    height: 34px;
+}
+.button-text{
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: center;
+    font-size: calc(1vw + 1vh + 2vmin);
+}
+H3 {
+    text-align: center;
+}
+.description {
+    text-align: center;
+}

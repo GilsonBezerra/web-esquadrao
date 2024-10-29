@@ -1,0 +1,74 @@
+<div>
+    <ion-img [src]="logoLogin"></ion-img>
+</div>
+
+<ion-segment value="login" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="login">
+        <ion-label>Login</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="cadastro">
+        <ion-label>Cadastro</ion-label>
+    </ion-segment-button>
+</ion-segment>
+
+<ion-content>
+    <div *ngIf="segmentSelected === 'login'">
+        <ion-card>
+            <form [formGroup]="loginForm">
+                <ion-item>
+                    <ion-label position="floating">E-mail</ion-label>
+                    <ion-input formControlName="email" type="e-mail" name="email" (keyup.enter)="login()"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Senha</ion-label>
+                    <ion-input formControlName="password" type="password" name="password" (keyup.enter)="login()"></ion-input>
+                </ion-item>
+            </form>
+        </ion-card>
+
+        <!-- <small *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors">
+      <p *ngIf="loginForm.controls.email.errors.required">Por favor, digite seu e-mail</p>
+      <p *ngIf="loginForm.controls.email.errors.pattern">Por favor, digite um e-mail válido</p>
+    </small>
+    <small *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors">
+      <p *ngIf="loginForm.controls.password.errors.required">Por favor, digite sua senha</p>
+    </small> -->
+
+        <ion-button expand="block" color="primary" type="submit" (click)="login()" [disabled]="loginForm.invalid">
+            Login
+        </ion-button>
+    </div>
+
+    <div *ngIf="segmentSelected === 'cadastro'">
+        <ion-card>
+            <form [formGroup]="cadastroForm">
+                <ion-item>
+                    <ion-label position="floating">Nome
+                        <ion-text style="color: red;">*</ion-text>
+                    </ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">E-mail
+                        <ion-text style="color: red;">*</ion-text>
+                    </ion-label>
+                    <ion-input formControlName="email" type="e-mail" name="email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Senha
+                        <ion-text style="color: red;">*</ion-text>
+                    </ion-label>
+                    <ion-input formControlName="password" type="password" name="password"></ion-input>
+                </ion-item>
+            </form>
+        </ion-card>
+        <ion-button expand="block" color="primary" type="submit" (click)="cadastrarUsuario()" [disabled]="cadastroForm.invalid">
+            Cadastro
+        </ion-button>
+    </div>
+
+    <div class="version__code" *ngIf="segmentSelected === 'login'">
+        <small>Versão: v{{ appVersionCode }}</small>
+    </div>
+
+</ion-content>

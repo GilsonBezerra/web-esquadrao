@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-menu-button></ion-menu-button>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col size="9">
+                <ion-title>Meus agendamentos</ion-title>
+            </ion-col>
+            <ion-col size="3">
+                <ion-icon name="add" (click)="addNovoAgendamento()" class="icon__add"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div *ngIf="agendamentos">
+        <div *ngFor="let agendamento of agendamentos" (click)="irParaDetalhes(agendamento)">
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="12">
+                            <ion-item lines="none"><label><strong>Profissional:&nbsp;</strong></label>{{ agendamento.profissional }}</ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="top__row">
+                        <ion-col size="12">
+                            <ion-item lines="none"><label><strong>Data:&nbsp;</strong></label>{{ agendamento.data | date: 'dd/MM/yyyy'}}</ion-item>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="top__row">
+                        <ion-col size="12">
+                            <ion-item lines="none"><label><strong>Serviço:&nbsp;</strong></label>{{ agendamento.servico.nome }}</ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+    </div>
+    <div *ngIf="!agendamentos || agendamentos <= 0">
+        <ion-card>
+            <ion-card-title>{{ agendamentoMessageVazio }}</ion-card-title>
+        </ion-card>
+    </div>
+
+    <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addNovoAgendamento()">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab> -->
+
+</ion-content>

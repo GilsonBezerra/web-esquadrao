@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Novo Agendamento</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <form [formGroup]="agendamentoForm">
+            <ion-item>
+                <ion-label position="floating">Data</ion-label>
+                <ion-input class="input__date" type="date" formControlName="data"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Serviço</ion-label>
+                <ion-select [compareWith]="compareWith" formControlName="servico" (ionChange)="getServicoById(nomeServico)" [(ngModel)]="nomeServico">
+                    <ion-select-option *ngFor="let s of servico" [value]="s">{{s.nome}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item *ngIf="preco" disabled>
+                <!-- <ion-label position="floating">Preço</ion-label> -->
+                <ion-input class="input__preco"><strong>{{ preco | currency: 'BRL' }}</strong></ion-input>
+            </ion-item>
+            <ion-item *ngIf="profissional">
+                <ion-label position="floating">Profissional</ion-label>
+                <ion-select [compareWith]="compareWith" formControlName="profissional">
+                    <ion-select-option *ngFor="let p of profissional; let i = index" [value]="profissional[i]">{{profissional[i]}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Pagamento</ion-label>
+                <ion-select [compareWith]="compareWith" formControlName="formaPagamento">
+                    <ion-select-option *ngFor="let forma of formaPagamento; let i = index" [value]="forma" (keyup.enter)="criarNovoAgendamento()">{{formaPagamento[i].forma}}</ion-select-option>
+                </ion-select>
+                <!-- <ion-input formControlName="statusPagamento" (keyup.enter)="criarNovoAgendamento()"></ion-input> -->
+            </ion-item>
+        </form>
+    </ion-card>
+
+    <ion-button (click)="criarNovoAgendamento()" [disabled]="agendamentoForm.invalid">Salvar</ion-button>
+
+</ion-content>

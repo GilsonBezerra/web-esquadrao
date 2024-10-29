@@ -1,0 +1,7 @@
+{
+  "name": "barbearia-piloto",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
