@@ -1,4 +1,4 @@
-# lc-mob-barbearia-piloto
+# app-esquadrao
 # Comando para trocar de branch, mergear e deletar branch
 #git checkout develop && git merge [branch name] && git push origin --delete [branch name]
 
